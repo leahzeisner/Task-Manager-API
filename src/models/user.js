@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({path: __dirname + '/.env'})
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator');
 const validator = require('validator')
@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
+        unique: true,
         trim: true,
         lowercase: true,
         validate(value) {
@@ -55,6 +56,7 @@ const userSchema = new mongoose.Schema({
 }, {
     timestamps: true
 })
+userSchema.plugin(uniqueValidator);
 
 
 
@@ -134,7 +136,7 @@ userSchema.pre('remove', async function (next) {
 
 
 
-userSchema.plugin(uniqueValidator);
+
 const User = mongoose.model('User', userSchema)
 
 module.exports = User;

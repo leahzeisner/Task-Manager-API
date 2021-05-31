@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({path: __dirname + '/.env'})
 const express = require('express')
 require('./db/mongoose')
 const userRouter = require('./routers/user')
