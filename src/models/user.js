@@ -1,4 +1,3 @@
-require('dotenv').config({path: __dirname + '/.env'})
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator');
 const validator = require('validator')
