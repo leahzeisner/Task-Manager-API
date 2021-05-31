@@ -1,6 +1,6 @@
+require('dotenv').config();
 const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator');
-require('dotenv').config();
 const validator = require('validator')
 const bcrypt = require ('bcryptjs')
 const jwt = require ('jsonwebtoken')
